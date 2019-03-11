@@ -1,0 +1,50 @@
+.skills__container {
+    @include centerItem($max-width);
+    @include flexBasic(space-around, row, wrap);
+    margin-bottom: 48px;
+    @media (max-width: 767px) {
+        flex-direction: column;
+        justify-content: center;
+    }
+    h3 {
+        width: 100%;
+    }
+}
+.skill {
+    box-sizing: border-box;
+    background-color: $main-dark;
+    width: 31%;
+    color: white;
+    padding: 10px 20px 40px;
+    @media (max-width: 767px) {
+        width: 90%;
+        margin: 20px 5%;
+    }
+    h4 {
+        font-weight: 700;
+        text-align: center;
+        padding: 10px 0 20px;
+        font-size: 25px;
+        text-transform: capitalize;
+    }
+
+    &__title {
+        p {
+            padding-bottom: 15px;
+            margin-bottom: 10px;
+            position: relative;
+            text-align: center;
+
+            &:after {
+                content: '';
+                width: 80%;
+                height: 1px;
+                background-color: white;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translate3d(-50%,0,0)
+            }
+        }
+    }
+}
