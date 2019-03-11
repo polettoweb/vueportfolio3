@@ -4,7 +4,7 @@
         <div class="portfolio__container">
             <div v-for="item in portfolioItems" class="portfolio__img" :key="item.path">
                 <router-link
-                    :to="'/portfolio/' + item.path"
+                    :to="`/portfolio/${item.path}`"
                     :alt="item.alt"
                     :tags="item.tags"
                     :linkTitle="item.linkTitle"
