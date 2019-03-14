@@ -16,9 +16,6 @@ export default new Router({
     {
       path: "/portfolio",
       name: "portfolio",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () =>
         import(/* webpackChunkName: "portfolio" */ "./views/portfolio.vue")
     },
@@ -26,6 +23,11 @@ export default new Router({
       path: "/portfolio/:path",
       name: "portfolioItem",
       component: () => import(/* webpackChunkName: "portfolioItem" */ "./views/portfolioItem.vue")
+    },
+    {
+      path: "/workshop",
+      name: "workshop",
+      component: () => import(/* webpackChunkName: "workshop" */ "./views/Workshop.vue")
     }
   ]
 });

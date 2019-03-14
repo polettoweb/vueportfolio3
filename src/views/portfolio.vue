@@ -4,10 +4,7 @@
         <div class="portfolio__container">
             <div v-for="item in portfolioItems" class="portfolio__img" :key="item.path">
                 <router-link
-                    :to="`/portfolio/${item.path}`"
-                    :alt="item.alt"
-                    :tags="item.tags"
-                    :linkTitle="item.linkTitle"
+                    :to="{ path: `/portfolio/${item.path}`}"
                 >
                     <img :src="item.src" :alt="item.alt">
                 </router-link>
@@ -42,7 +39,7 @@ export default {
             {
                 name: "description",
                 content:
-                    "Marco Poletto Frontend Web Developer, Web Designer freelance, portfolio"
+                    "Marco Poletto Frontend Web Developer, Web Developer freelance, portfolio"
             }
         ]
     }
