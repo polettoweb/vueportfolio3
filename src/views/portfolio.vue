@@ -3,9 +3,7 @@
         <h1>Portfolio</h1>
         <div class="portfolio__container">
             <div v-for="item in portfolioItems" class="portfolio__img" :key="item.path">
-                <router-link
-                    :to="{ path: `/portfolio/${item.path}`}"
-                >
+                <router-link :to="{ path: `/portfolio/${item.path}`}">
                     <img :src="item.src" :alt="item.alt">
                 </router-link>
             </div>
@@ -15,27 +13,19 @@
 
 <script>
 import axios from "axios";
-
 export default {
-    data() {
-        return {
-            portfolioItems: []
-        };
+    computed: {
+        portfolioItems() {
+            return this.$store.state.portfolioItems;
+        }
     },
     beforeCreate() {
-        axios("https://www.marcopoletto.eu/api/v1/portfolio").then(
-            res => (this.portfolioItems = res.data.content)
-        );
+        this.$store.state.portfolioItems === null &&
+            this.$store.dispatch("getPortfolio");
     },
     metaInfo: {
         title: "Marco Poletto | Web Developer | Mentor",
         meta: [
-            { charset: "utf-8" },
-            {
-                name: "viewport",
-                content: "width=device-width, initial-scale=1"
-            },
-            { name: "author", content: "Marco Poletto Web Developer" },
             {
                 name: "description",
                 content:

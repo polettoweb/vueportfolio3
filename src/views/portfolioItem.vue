@@ -1,13 +1,8 @@
 <template>
-    <!-- <Helmet>
-        <meta name="description" content={`Marco Poletto Frontend Web Developer, Web Designer freelance, ${this.props.title}`}/>
-        <title>Marco Poletto | Web Developer - Portfolio - {this.props.title}</title>
-        <body class="alternate" />
-    </Helmet> -->
     <div v-if="brand !== null" class="portfolio-detail__content">
         <h1>{{brand.linkTitle}}</h1>
         <div class="portfolio-detail__image">
-            <img :src="brand.srcDevices" :alt="brand.alt" />
+            <img :src="brand.srcDevices" :alt="brand.alt">
         </div>
         <div class="portfolio-detail__description">
             <div class="portfolio-detail__websites">
@@ -34,25 +29,23 @@
 
 <script>
 import axios from "axios";
-
 export default {
     name: "portfolioItem",
-    data() {
-        return {
-            brand: null
-        };
+    computed: {
+        brand() {
+            const res = this.$store.state.portfolioItems.filter(
+                el => el.path === this.$route.params.path
+            );
+            return res[0];
+        }
     },
     beforeCreate() {
-        axios('https://www.marcopoletto.eu/api/v1/portfolio').then(res=> {
-            return res.data.content.filter(el => el.path === this.$route.params.path)
-        })
-        .then(res => {
-            this.brand = res[0];
-        })
+        this.$store.state.portfolioItems === null &&
+            this.$store.dispatch("getPortfolio");
     },
     metaInfo() {
         return {
-            title: `Marco Poletto | Web Developer - Portfolio - ${this.brand.linkTitle}`,
+            title: `Marco Poletto | Web Developer - Portfolio`,
             meta: [
                 { charset: "utf-8" },
                 {
@@ -62,11 +55,10 @@ export default {
                 { name: "author", content: "Marco Poletto Web Developer" },
                 {
                     name: "description",
-                    content:
-                        `Marco Poletto Frontend Web Developer, Web Developer freelance, portfolio, ${this.brand.linkTitle}`
+                    content: `Marco Poletto Frontend Web Developer, Web Developer freelance, portfolio`
                 }
             ]
-        }
+        };
     }
 };
 </script>

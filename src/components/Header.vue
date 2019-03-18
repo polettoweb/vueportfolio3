@@ -40,7 +40,7 @@ export default {
     width: 36px;
     height: 30px;
     right: 15px !important;
-    top: 15px;
+    top: 15px !important;
     @media (max-width: 480px) {
         top: 8px;
         right: 8px;
