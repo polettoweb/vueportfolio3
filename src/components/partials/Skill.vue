@@ -13,6 +13,3 @@ export default {
     props: ["title", "text", "children"]
 };
 </script>
-
-<style>
-</style>

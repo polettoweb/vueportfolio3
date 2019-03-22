@@ -6,7 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    isOpen: false,
+    isSideBarOpen: false,
     portfolioItems: null,
     workshopItems: null,
     expDetails: null,
@@ -30,6 +30,9 @@ export default new Vuex.Store({
     setBlog(state, payload) {
       state.blog = payload;
     },
+    externalInteractMenu(state) {
+      state.isSideBarOpen = !state.isSideBarOpen;
+    }
   },
   actions: {
     async getPortfolio({ state, commit }) {

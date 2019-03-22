@@ -5,7 +5,7 @@
                 <img :src="logo" alt="logo">
             </router-link>
         </div>
-        <Menu v-if="$mq === 'sm'" right :isOpen="false" noOverlay>
+        <Menu v-if="$mq === 'sm'" right :isOpen="false">
             <Navigation/>
         </Menu>
         <Navigation v-else/>

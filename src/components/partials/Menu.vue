@@ -39,10 +39,10 @@
 <script>
 export default {
     name: "menubar",
-    data() {
-        return {
-            isSideBarOpen: this.isOpen
-        };
+    computed: {
+        isSideBarOpen() {
+            return this.$store.state.isSideBarOpen;
+        }
     },
     props: {
         isOpen: {
@@ -89,11 +89,11 @@ export default {
     methods: {
         openMenu() {
             this.$emit("openMenu");
-            this.isSideBarOpen = true;
+            this.$store.commit("externalInteractMenu");
         },
         closeMenu() {
             this.$emit("closeMenu");
-            this.isSideBarOpen = false;
+            this.$store.commit("externalInteractMenu");
         },
         closeMenuOnEsc(e) {
             e = e || window.event;
