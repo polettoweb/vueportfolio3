@@ -69,6 +69,7 @@ h2 {
         font-size: 60px;
     }
 }
+
 h3 {
     font-family: $family;
     text-align: center;
@@ -91,6 +92,7 @@ h3 {
         background-color: white;
         @include baseTransition(width);
     }
+    
     &:hover, &.active {
         &:after {
             width: 100%;

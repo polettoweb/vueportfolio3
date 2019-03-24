@@ -2,24 +2,29 @@
     @include centerItem($max-width);
     @include flexBasic(space-around, row, wrap);
     margin-bottom: 48px;
+
     @media (max-width: $bp-md) {
         flex-direction: column;
         justify-content: center;
     }
+
     h3 {
         width: 100%;
     }
 }
+
 .skill {
     box-sizing: border-box;
     background-color: $c-primary-dark;
     width: 31%;
     color: white;
     padding: 10px 20px 40px;
+    
     @media (max-width: $bp-md) {
         width: 90%;
         margin: 20px 5%;
     }
+
     h4 {
         font-weight: 700;
         text-align: center;

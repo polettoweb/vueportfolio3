@@ -14,7 +14,7 @@ footer {
     .footer__copy {
         height: 100%;
         line-height: 80px;
-        color: #ffffff;
+        color: $c-secondary;
         font-size: 14px;
     
         @media (max-width: $bp-sm-max) {
