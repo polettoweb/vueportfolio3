@@ -2,6 +2,7 @@
     <div class="blog__container">
         <section>
             <h1>{{article.title}}</h1>
+            <router-link to="/blog" class="button__back">Back</router-link>
             <p>{{article.date}}</p>
             <div class="blog__image">
                 <img :src="article.featuredImage" alt>
@@ -10,9 +11,6 @@
                 <p>{{article.text}}</p>
             </div>
         </section>
-        <div class="blog__back-container">
-            <router-link to="/blog" class="button__back">Back</router-link>
-        </div>
     </div>
 </template>
 <script>

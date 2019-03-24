@@ -1,6 +1,7 @@
 <template>
     <div v-if="brand !== null" class="portfolio-detail__content">
         <h1>{{brand.linkTitle}}</h1>
+        <router-link to="/portfolio" class="button__back">Back</router-link>
         <div class="portfolio-detail__image">
             <img :src="brand.srcDevices" :alt="brand.alt">
         </div>
@@ -23,7 +24,6 @@
                 <p>{{brand.description}}</p>
             </div>
         </div>
-        <router-link to="/portfolio" class="button__back">Back</router-link>
     </div>
 </template>
 

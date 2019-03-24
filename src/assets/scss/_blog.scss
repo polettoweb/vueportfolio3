@@ -1,11 +1,13 @@
 .blog-cat {
     &__home {
-        // @include centerContainer;
-        min-height: 80vh;
+        min-height: calc(100vh - 160px);
+        height: auto;
         padding: 0 5px;
     }
 
     &__container {
+        padding: 32px 0;
+
         a {
             width: 100%;
             display: flex;
@@ -21,22 +23,14 @@
         width: 100%;
         max-width: 300px;
         display: flex;
-        flex-direction: row;
         flex-wrap: nowrap;
         justify-content: flex-start;
-        margin-bottom: 40px;
-        margin: 32px auto;
+        margin: 0 auto 32px;
         box-shadow: 10px 10px 10px #370101;
         @include baseTransition ;
         border-radius: 5px;
         background-color: #7b2525;
         color: white;
-
-        &:nth-child(even) {
-            a {
-                flex-direction: row-reverse;
-            }
-        }
 
         @media (max-width: $bp-md) {
             box-shadow: none;
@@ -48,14 +42,6 @@
 
             @media (max-width: $bp-md) {
                 transform: none;
-            }
-        }
-
-        &:nth-child(even) {
-            flex-direction: row-reverse;
-
-            @media (max-width: $bp-md) {
-                flex-direction: column;
             }
         }
     }

@@ -14,6 +14,7 @@
             color: white;
             text-align: right;
             margin-bottom: 16px;
+            margin-right: 5px;
         }
     }
 
@@ -24,6 +25,10 @@
 
         @media (max-width: $bp-xlg-max) {
             padding: 0 2%;
+        }
+
+        & p {
+            text-align: left;
         }
     }
     &__image {
