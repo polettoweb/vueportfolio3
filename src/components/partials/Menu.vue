@@ -37,12 +37,13 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from "vuex";
 export default {
     name: "menubar",
     computed: {
-        isSideBarOpen() {
-            return this.$store.state.isSideBarOpen;
-        }
+        ...mapState({
+            isSideBarOpen: state => state.isSideBarOpen
+        })
     },
     props: {
         isOpen: {
@@ -87,13 +88,14 @@ export default {
         }
     },
     methods: {
+        ...mapMutations(["externalOpenMenu", "externalCloseMenu"]),
         openMenu() {
             this.$emit("openMenu");
-            this.$store.commit("externalInteractMenu");
+            this.externalOpenMenu();
         },
         closeMenu() {
             this.$emit("closeMenu");
-            this.$store.commit("externalInteractMenu");
+            this.externalCloseMenu();
         },
         closeMenuOnEsc(e) {
             e = e || window.event;
@@ -216,13 +218,5 @@ export default {
     right: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.3);
-}
-.fade-enter-active,
-.fade-leave-active {
-    transition: opacity 0.25s;
-}
-.fade-enter,
-.fade-leave-to {
-    opacity: 0;
 }
 </style>

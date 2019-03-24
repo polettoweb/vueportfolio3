@@ -15,6 +15,7 @@
     </nav>
 </template>
 <script>
+import { mapMutations } from "vuex";
 export default {
     data() {
         return {
@@ -43,8 +44,9 @@ export default {
         };
     },
     methods: {
+        ...mapMutations(["externalCloseMenu"]),
         closeMenu() {
-            this.$store.commit("externalInteractMenu");
+            this.externalCloseMenu();
         }
     }
 };

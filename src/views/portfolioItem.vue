@@ -23,25 +23,25 @@
                 <p>{{brand.description}}</p>
             </div>
         </div>
-        <router-link to="/portfolio" class="portfolio__back">Back</router-link>
+        <router-link to="/portfolio" class="button__back">Back</router-link>
     </div>
 </template>
 
 <script>
+import { mapActions, mapState } from "vuex";
 import axios from "axios";
 export default {
     name: "portfolioItem",
     computed: {
-        brand() {
-            const res = this.$store.state.portfolioItems.filter(
-                el => el.path === this.$route.params.path
-            );
-            return res[0];
-        }
+        ...mapState({
+            brand: state => state.portfolioItem
+        })
     },
-    beforeCreate() {
-        this.$store.state.portfolioItems === null &&
-            this.$store.dispatch("getPortfolio");
+    methods: {
+        ...mapActions(["getPortfolioItem"])
+    },
+    created() {
+        this.getPortfolioItem(this.$route.params.path);
     },
     metaInfo() {
         return {

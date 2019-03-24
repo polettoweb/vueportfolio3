@@ -8,16 +8,21 @@ export default new Vuex.Store({
   state: {
     isSideBarOpen: false,
     portfolioItems: null,
+    portfolioItem: null,
     workshopItems: null,
     expDetails: null,
     skillsLines: null,
     skillsTopics: null,
     blog: null,
+    single: null,
     baseApiUrl: "https://www.marcopoletto.eu/api/v1/"
   },
   mutations: {
     setPortfolio(state, payload) {
       state.portfolioItems = payload;
+    },
+    setPortfolioItem(state, payload) {
+      state.portfolioItem = payload.res.filter(el => el.path === payload.brand)[0]
     },
     setWorkshop(state, payload) {
       state.workshopItems = payload;
@@ -30,22 +35,39 @@ export default new Vuex.Store({
     setBlog(state, payload) {
       state.blog = payload;
     },
-    externalInteractMenu(state) {
-      state.isSideBarOpen = !state.isSideBarOpen;
+    setSingle(state, payload) {
+      state.single = payload.res.filter(el => el.slug === payload.slug)[0]
+    },
+    externalCloseMenu(state) {
+      state.isSideBarOpen = false;
+    },
+    externalOpenMenu(state) {
+      state.isSideBarOpen = true;
     }
   },
   actions: {
     async getPortfolio({ state, commit }) {
       try {
-        let response = await axios.get(`${state.baseApiUrl}portfolio`)
+        const response = await axios.get(`${state.baseApiUrl}portfolio`)
         commit('setPortfolio', response.data.content)
       } catch (error) {
         commit('setPortfolio', []);
       }
     },
+    async getPortfolioItem({ state, commit }, brand) {
+      try {
+        const response = await axios.get(`${state.baseApiUrl}portfolio`)
+        commit('setPortfolioItem', {
+          res: response.data.content,
+          brand: brand
+        })
+      } catch (error) {
+        commit('setPortfolioItem', []);
+      }
+    },
     async getWorkshop({ state, commit }) {
       try {
-        let response = await axios.get(`${state.baseApiUrl}workshop`)
+        const response = await axios.get(`${state.baseApiUrl}workshop`)
         commit('setWorkshop', response.data.content)
       } catch (error) {
         commit('setWorkshop', []);
@@ -53,7 +75,7 @@ export default new Vuex.Store({
     },
     async getResume({ state, commit }) {
       try {
-        let response = await axios.get(`${state.baseApiUrl}resume`)
+        const response = await axios.get(`${state.baseApiUrl}resume`)
         commit('setResume', response.data.content)
       } catch (error) {
         commit('setResume', []);
@@ -61,11 +83,22 @@ export default new Vuex.Store({
     },
     async getBlog({ state, commit }) {
       try {
-        let response = await axios.get(`${state.baseApiUrl}blog`)
+        const response = await axios.get(`${state.baseApiUrl}blog`)
         commit('setBlog', response.data.content)
       } catch (error) {
         commit('setBlog', []);
       }
-    }
+    },
+    async getSingle({ state, commit }, slug) {
+      try {
+        const response = await axios.get(`${state.baseApiUrl}blog`)
+        commit('setSingle', {
+          res: response.data.content,
+          slug: slug
+        })
+      } catch (error) {
+        commit('setSingle', []);
+      }
+    },
   }
 });

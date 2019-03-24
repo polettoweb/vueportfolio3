@@ -21,15 +21,19 @@
     </div>
 </template>
 <script>
+import { mapState, mapActions } from "vuex";
 import axios from "axios";
 export default {
     computed: {
-        articles() {
-            return this.$store.state.blog;
-        }
+        ...mapState({
+            articles: state => state.blog
+        })
     },
-    beforeCreate() {
-        this.$store.state.blog === null && this.$store.dispatch("getBlog");
+    methods: {
+        ...mapActions(["getBlog"])
+    },
+    created() {
+        this.articles === null && this.getBlog();
     },
     metaInfo() {
         return {

@@ -12,48 +12,26 @@
 
         p {
             color: white;
-        }
-
-        .link-more {
-            display: none;
+            text-align: right;
+            margin-bottom: 16px;
         }
     }
+
     &__post {
         width: 96%;
         max-width: $max-width;
         font-size: 18px;
 
-        @media (max-width: 1199px) {
+        @media (max-width: $bp-xlg-max) {
             padding: 0 2%;
         }
     }
     &__image {
         text-align: center;
         margin-bottom: 20px; 
+
         img {
             width: 100%;
-        }
-    }
-
-    &__back {
-        display: block;
-        width: 200px;
-        height: 60px;
-        background-color: $azure;
-        margin: 20px 0;
-        line-height: 60px;
-        text-align: center;
-        text-decoration: none;
-        color: $ltext;
-        font-size: 20px;
-
-        @media (max-width: 1199px) {
-            margin: 20px 2% ;
-        }
-
-        &-container {
-            @include centerContainer();
-            @include flexBasic(flex-end, row, no-wrap);
         }
     }
 }

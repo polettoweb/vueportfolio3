@@ -12,27 +12,23 @@
             i {
                 line-height: 80px;
                 font-size: 24px;
-                transition: all 0.2s linear;
+                @include baseTransition;
                 color: #ffffff;
-                @media (max-width: 579px) {
+
+                @media (max-width: $bp-sm-max) {
                     font-size: 32px;
                 }
 
-                &.ion-social-github {
-                    &:hover {
-                        color: #cccccc;
-                    }
+                &:hover {
+                    color: #666;
                 }
+
                 &.ion-social-twitter {
                     &:hover{
                         color: #50ABF1;
                     }
                 }
-                &.ion-social-googleplus {
-                    &:hover{
-                        color: #DD4B39;
-                    }
-                }
+
                 &.ion-social-linkedin {
                     &:hover{
                         color: #0084B1;

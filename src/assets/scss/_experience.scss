@@ -10,13 +10,13 @@
         height: 90%;
         background-color: white;
         left: 50%;
-        @media (max-width: 767px) {
+        @media (max-width: $bp-md) {
             left: 96%;
         }
     }
     
     &__intro {
-        font-family: $family-secondary;
+        font-family: $family;
         color: white;
     }
 
@@ -39,9 +39,9 @@
                 width: calc(50% - 30px);
                 height: auto;
                 position: relative;
-                transition: all 0.4s ease-in-out;
+                @include baseTransition;
 
-                @media (max-width: 767px) {
+                @media (max-width: $bp-md) {
                     width: 88%;
                     margin-bottom: 100px;
                 }
@@ -50,8 +50,8 @@
                     float: left;
                     box-shadow: $box-shadow-left;
 
-                    @media (max-width: 767px) {
-                        box-shadow: 15px 15px 0 $main-dark;
+                    @media (max-width: $bp-md) {
+                        box-shadow: $box-shadow;
                     }
 
                     &:hover {
@@ -63,9 +63,9 @@
                     float: right;
                     box-shadow: $box-shadow;
 
-                    @media (max-width: 767px) {
+                    @media (max-width: $bp-md) {
                         float: left;
-                        box-shadow: 15px 15px 0 $main-dark;
+                        box-shadow: $box-shadow;
                     }
 
                     &:hover {
@@ -87,7 +87,7 @@
                         border-left: 16px solid transparent;
                         left: -16px;
                         top: 0;
-                        @media (max-width: 767px) {
+                        @media (max-width: $bp-md) {
                             left: auto;
                             right: -16px;
                             border-left: none;
@@ -97,7 +97,7 @@
 
                     .ion-ios-circle-filled {
                         left: -41px;
-                        @media (max-width: 767px) {
+                        @media (max-width: $bp-md) {
                             left: auto;
                             right: -9.5vw;
                         }
@@ -118,7 +118,7 @@
 
                     .ion-ios-circle-filled {
                         right: -44px;
-                        @media (max-width: 767px) {
+                        @media (max-width: $bp-md) {
                             right: -9.5vw;
                         }
                     }

@@ -46,32 +46,31 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
 import axios from "axios";
 import ExpCard from "@/components/partials/ExpCard.vue";
 import Skill from "@/components/partials/Skill.vue";
 export default {
     name: "Resume",
     computed: {
-        expDetails() {
-            return this.$store.state.expDetails;
-        },
-        skillsLines() {
-            return this.$store.state.skillsLines;
-        },
-        skillsTopics() {
-            return this.$store.state.skillsTopics;
-        }
+        ...mapState({
+            expDetails: state => state.expDetails,
+            skillsLines: state => state.skillsLines,
+            skillsTopics: state => state.skillsTopics
+        })
     },
-    beforeCreate() {
-        this.$store.state.expDetails === null &&
-            this.$store.dispatch("getResume");
+    methods: {
+        ...mapActions(["getResume"])
+    },
+    created() {
+        this.expDetails === null && this.getResume();
     },
     components: {
         ExpCard,
         Skill
     },
     metaInfo: {
-        title: "Marco Poletto | Web Developer - Curriculum Vitae",
+        title: "Marco Poletto | Web Developer - Resume - Curriculum Vitae",
         meta: [
             { charset: "utf-8" },
             {

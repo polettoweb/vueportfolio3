@@ -12,16 +12,19 @@
 </template>
 
 <script>
+import { mapActions, mapState } from "vuex";
 import axios from "axios";
 export default {
     computed: {
-        portfolioItems() {
-            return this.$store.state.portfolioItems;
-        }
+        ...mapState({
+            portfolioItems: state => state.portfolioItems
+        })
     },
-    beforeCreate() {
-        this.$store.state.portfolioItems === null &&
-            this.$store.dispatch("getPortfolio");
+    methods: {
+        ...mapActions(["getPortfolio"])
+    },
+    created() {
+        this.portfolioItems === null && this.getPortfolio();
     },
     metaInfo: {
         title: "Marco Poletto | Web Developer | Mentor",

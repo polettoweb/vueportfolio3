@@ -14,8 +14,8 @@ Vue.use(SequentialEntrance);
 
 Vue.use(VueMq, {
   breakpoints: {
-    sm: 1023,
-    md: 1024
+    sm: 1024,
+    md: 1025
   },
   defaultBreakpoint: "md" // customize this for SSR
 });

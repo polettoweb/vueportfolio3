@@ -1,6 +1,6 @@
 @import 'reset';
 @import 'vars';
-@import 'functions';
+@import 'mixins';
 @import 'common';
 @import 'header';
 @import 'footer';
@@ -8,7 +8,6 @@
 @import 'navigation';
 @import 'home';
 @import 'keywords';
-@import 'card';
 @import 'experience';
 @import 'skill';
 @import 'blog';

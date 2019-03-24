@@ -1,149 +1,27 @@
 /* Variables */
 
-$purple: #8f4dae;
-$azure: #4db2b3;
-$grey: #2b2b2b;
-$lgrey: #f4f5f7;
-$ltext: #efefef;
-$text: #424242;
-$main: #580f0f;
-$main-dark: #370101;
+$c-primary: #580f0f;
+$c-secondary: #ffffff;
+$c-primary-dark: #370101;
+
 $max-width: 1200px;
-$text-color: #424753;
-$text-color-light: #dedede;
-$title-color: #6f788c;
-$font-size: 0.9rem;
-$family-primary: 'Montserrat', sans-serif;
-$family-secondary: $family-primary;
-$box-shadow: 25px 25px 0px $main-dark;
-$box-shadow-left: -25px 25px 0px $main-dark;
-$linear-gradient: linear-gradient(-40deg, $azure, $purple);
-$base-transition: all cubic-bezier(0.17, 0.67, 0.5, 1) 0.3s;
-$timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 
-/*HOME*/
+$family: 'Montserrat', sans-serif;
 
-$size: 20px;
-$speed: 2s;
-$peakopacity: 0.7;
+$box-shadow: 15px 15px 0px $c-primary-dark;
+$box-shadow-left: -15px 15px 0px $c-primary-dark;
 
-/* MEDIA QUERY */
-$mobile: '(max-width: 768px)';
-$mbp: 768px;
-$dbp: 769px;
+$transition-function: cubic-bezier(0.17, 0.67, 0.5, 1);
+$transition-duration: 0.5s;
+$base-transition: $transition-duration $transition-function ;
 
-/* mixins */
-
-@mixin centerContainer() {
-    width: 100%;
-    max-width: $max-width;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-@mixin flexBasic($content, $direction, $wrap) {
-    display: flex;
-    justify-content: $content;
-    flex-direction: $direction;
-    flex-wrap: $wrap;
-}
-
-//logo header
-@keyframes logo {
-    0% {
-        margin-right: 5px;
-        transform: rotateZ(0);
-    }
-    50% {
-        margin-right: 50px;
-        transform: rotateZ(-40deg);
-    }
-    // 60% {
-    //     transform: rotateZ(-10deg);
-    // }
-    75% {
-        margin-right: -15px;
-        // transform: rotateZ(0);
-    }
-    100% {
-        margin-right: 5px;
-        transform: rotateZ(0);
-    }
-}
-
-//Name homepage
-@keyframes dash {
-    to {
-        stroke-dasharray: 0;
-        stroke-dashoffset: 0;
-        fill: rgba(255, 255, 255, 0.4);
-    }
-}
-
-@keyframes dashRole {
-    0% {
-        stroke-dasharray: 0, 1000000000000000;
-        fill: none;
-    }
-    100% {
-        stroke-dasharray: 700, 0;
-        fill: #fff;
-    }
-}
-
-@keyframes pulse {
-    0% {
-        -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
-    }
-    70% {
-        -moz-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
-        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
-    }
-    100% {
-        -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-    }
-}
-
-@keyframes arrows {
-    0% {
-        border-left: 3px solid rgba(255, 255, 255, 0);
-        border-bottom: 3px solid rgba(255, 255, 255, 0);
-        transform: translate($size/-6, $size * 4/-6) rotate(-45deg);
-    }
-    10%,
-    90% {
-        border-left: 3px solid rgba(255, 255, 255, 0);
-        border-bottom: 3px solid rgba(255, 255, 255, 0);
-    }
-    50% {
-        border-left: 3px solid rgba(255, 255, 255, $peakopacity);
-        border-bottom: 3px solid rgba(255, 255, 255, $peakopacity);
-        transform: translate($size/-6, 0px) rotate(-45deg) scale(1.4);
-    }
-    100% {
-        border-left: 3px solid rgba(255, 255, 255, 0);
-        border-bottom: 3px solid rgba(255, 255, 255, 0);
-        transform: translate($size/-6, $size * 4/6) rotate(-45deg);
-    }
-}
-@keyframes slide-in {
-    0% {
-        right: -1000px;
-        opacity: 0;
-        top: -50px;
-    }
-    50% {
-        right: 0;
-        opacity: 0.5;
-    }
-    99% {
-        right: 0;
-        opacity: 1;
-    }
-    100% {
-        right: 0;
-        opacity: 0;
-    }
-}
+$bp-xs-max: 450px;
+$bp-sm: 480px;
+$bp-sm-max: 579px;
+$bp-md: 767px;
+$bp-md-height: 900px;
+$bp-md-max: 959px;
+$bp-lg: 960px;
+$bp-lg-max: 1023px;
+$bp-xlg: 1024px;
+$bp-xlg-max: 1199px;

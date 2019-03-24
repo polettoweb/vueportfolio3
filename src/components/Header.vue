@@ -5,7 +5,7 @@
                 <img :src="logo" alt="logo">
             </router-link>
         </div>
-        <Menu v-if="$mq === 'sm'" right :isOpen="false">
+        <Menu v-if="$mq === 'sm'" right :isOpen="false" autoClose="1024">
             <Navigation/>
         </Menu>
         <Navigation v-else/>
@@ -30,18 +30,20 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/assets/scss/_vars.scss";
 .bm-menu-wrap {
-    @media (max-width: 1023px) {
+    @media (max-width: $bp-lg-max) {
         width: 100% !important;
     }
 }
+
 .bm-burger-button {
     position: fixed;
     width: 36px;
     height: 30px;
     right: 15px !important;
     top: 15px !important;
-    @media (max-width: 480px) {
+    @media (max-width: $bp-sm) {
         top: 8px;
         right: 8px;
     }

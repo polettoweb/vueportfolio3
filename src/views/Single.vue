@@ -11,23 +11,24 @@
             </div>
         </section>
         <div class="blog__back-container">
-            <router-link to="/blog" class="blog__back">&lt; Back to blogs</router-link>
+            <router-link to="/blog" class="button__back">Back</router-link>
         </div>
     </div>
 </template>
 <script>
+import { mapState, macActions, mapActions } from "vuex";
 import axios from "axios";
 export default {
     computed: {
-        article() {
-            const res = this.$store.state.blog.filter(
-                el => el.slug === this.$route.params.slug
-            );
-            return res[0];
-        }
+        ...mapState({
+            article: state => state.single
+        })
     },
-    beforeCreate() {
-        this.$store.state.blog === null && this.$store.dispatch("getBlog");
+    methods: {
+        ...mapActions(["getSingle"])
+    },
+    created() {
+        this.article === null && this.getSingle(this.$route.params.slug);
     },
     metaInfo() {
         return {

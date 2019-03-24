@@ -1,7 +1,9 @@
 <template>
     <div id="app">
         <Header/>
-        <router-view/>
+        <div class="app__container">
+            <router-view/>
+        </div>
         <Footer/>
     </div>
 </template>
@@ -18,4 +20,8 @@ export default {
 
 <style lang="scss">
 @import "@/assets/scss/App.scss";
+
+.app__container {
+    @include centerContainer;
+}
 </style>

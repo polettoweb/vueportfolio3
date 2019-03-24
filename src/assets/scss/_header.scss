@@ -17,7 +17,7 @@
             top: 15px;
             left: 15px;
             
-            @media (max-width: 480px) {
+            @media (max-width: $bp-sm) {
                 top: 8px;
                 left: 8px;
             }
