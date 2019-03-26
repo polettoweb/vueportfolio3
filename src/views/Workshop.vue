@@ -19,16 +19,19 @@
 
 <script>
 import axios from "axios";
+import { mapState, mapActions } from "vuex";
 import WorkshopItem from "@/components/partials/WorkshopItem";
 export default {
     computed: {
-        items() {
-            return this.$store.state.workshopItems;
-        }
+        ...mapState({
+            items: state => state.workshopItems
+        })
     },
-    beforeCreate() {
-        this.$store.state.workshopItems == null &&
-            this.$store.dispatch("getWorkshop");
+    methods: {
+        ...mapActions(["getWorkshop"])
+    },
+    created() {
+        this.workshopItems == null && this.getWorkshop();
     },
     components: {
         WorkshopItem

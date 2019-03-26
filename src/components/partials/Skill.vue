@@ -7,9 +7,11 @@
 
 <script>
 export default {
-    data() {
-        return {};
-    },
-    props: ["title", "text", "children"]
+    props: {
+        title: {
+            type: String,
+            required: true
+        }
+    }
 };
 </script>

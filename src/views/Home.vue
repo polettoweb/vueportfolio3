@@ -4,14 +4,16 @@
             <div class="tilt">
                 <img :src="marco" alt="Marco Poletto">
             </div>
-            <h1>Hi, I'm Marco,
+            <h1>
+                Hi, I'm Marco,
                 <br>
-                <span>Frontend Developer,
+                <span>
+                    Frontend Developer,
                     <br>UI Engineer &amp; Mentor
                 </span>
             </h1>
         </div>
-        <Keywords/>
+        <Keywords :words="words"/>
         <div class="home__text">
             <p>
                 My goal is to build clean, performant and accessible
@@ -34,7 +36,16 @@ export default {
     name: "home",
     data() {
         return {
-            marco
+            marco,
+            words: [
+                "JavaScript",
+                "React",
+                "Vue",
+                "Accessibility",
+                "SSR",
+                "GraphQL",
+                "Sass"
+            ]
         };
     },
     components: {

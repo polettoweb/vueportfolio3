@@ -29,7 +29,6 @@
         margin-bottom: 40px;
         margin: 32px auto;
         box-shadow: 10px 10px 20px $c-primary-dark;
-        @include baseTransition;
         border-radius: 5px;
         background-color: mix(white, $c-primary, 10);
         color: white;
@@ -37,15 +36,6 @@
         @media (max-width: $bp-md) {
             flex-direction: column;
             box-shadow: none;
-        }
-
-        &:hover {
-            box-shadow: none;
-            transform: scale(1.02);
-
-            @media (max-width: $bp-md) {
-                transform: none;
-            }
         }
 
         &:nth-child(even) {
@@ -76,11 +66,6 @@
         position: absolute;
         height: 100%;
         transform: translate3d(-50%, -50%, 0);
-        @include baseTransition;
-
-        &:hover {
-            transform: translate3d(-50%, -50%, 0) scale(1.15);
-        }
     }
 
     &__links {
@@ -88,23 +73,13 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 16px 24px;
+        padding: 16px 24px 0;
 
-        &-git {
-            text-align: right;
-
-            img {
-                width: 120px;
-                @include baseTransition;
-
-                &:hover {
-                    transform: scale(0.85);
-                }
-            }
-        }
-
-        a {
-            display: block;
+        &-content {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
         }
     }
 

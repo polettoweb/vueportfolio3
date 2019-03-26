@@ -17,11 +17,13 @@ body {
         0 2px 10px 0 rgba(0, 0, 0, 0.12);
     transition: all 0.2s linear;
     width: 240px;
-    background-color: rgba($c-secondary, 1);
+    background-color: mix($c-primary, $c-secondary, 5%);
     color: $c-primary;
+    @include baseTransition;
 
     &:hover {
-        background-color: rgba($c-secondary, 0.5);
+        background-color: rgba(mix($c-primary, $c-secondary, 5%), 0.5);
+        transform: scale(0.95);
     }
 
     &__back {

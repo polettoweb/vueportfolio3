@@ -4,10 +4,10 @@
             <sequential-entrance tag="div" entranceFromTop :delay="700">
                 <p
                     class="keywords__text"
-                    v-for="(item, i) in keywords"
+                    v-for="(item, i) in words"
                     :key="i"
-                    :id="item.name.toLowerCase()"
-                >{{item.name}}</p>
+                    :id="item.toLowerCase()"
+                >{{item}}</p>
             </sequential-entrance>
         </div>
     </div>
@@ -15,39 +15,11 @@
 
 <script>
 export default {
-    data() {
-        return {
-            keywords: [
-                {
-                    name: "JavaScript",
-                    opacity: "1"
-                },
-                {
-                    name: "React",
-                    opacity: "0.7"
-                },
-                {
-                    name: "Vue",
-                    opacity: "0.7"
-                },
-                {
-                    name: "Accessibility",
-                    opacity: "0.6"
-                },
-                {
-                    name: "SSR",
-                    opacity: "0.4"
-                },
-                {
-                    name: "GraphQL",
-                    opacity: "0.3"
-                },
-                {
-                    name: "Sass",
-                    opacity: "0.5"
-                }
-            ]
-        };
+    props: {
+        words: {
+            type: Array,
+            required: true
+        }
     }
 };
 </script>
