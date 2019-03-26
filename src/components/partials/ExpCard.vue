@@ -15,7 +15,29 @@
 <script>
 export default {
     name: "ExpCard",
-    props: ["number", "title", "location", "date", "text"]
+    props: {
+        number: {
+            type: String,
+            required: true,
+            validator: prop => ["odd", "even"].indexOf(prop) !== -1
+        },
+        title: {
+            type: String,
+            required: true
+        },
+        location: {
+            type: String,
+            required: false
+        },
+        date: {
+            type: String,
+            required: true
+        },
+        text: {
+            type: String,
+            required: true
+        }
+    }
 };
 </script>
 

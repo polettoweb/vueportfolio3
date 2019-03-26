@@ -18,7 +18,8 @@ export default {
     props: {
         words: {
             type: Array,
-            required: true
+            required: true,
+            validator: prop => prop.length > 0
         }
     }
 };
