@@ -1,7 +1,7 @@
 <template>
     <div class="home__container">
         <div class="home__intro">
-            <div class="tilt">
+            <div class="tilt" data-cy="tilt">
                 <img :src="marco" alt="Marco Poletto">
             </div>
             <h1>
@@ -14,7 +14,7 @@
             </h1>
         </div>
         <Keywords :words="words"/>
-        <div class="home__text">
+        <div class="home__text" data-cy="home__text">
             <p>
                 My goal is to build clean, performant and accessible
                 user interfaces where the right user experience is a

@@ -2,7 +2,12 @@
     <div class="portfolio">
         <h1>Portfolio</h1>
         <div class="portfolio__container">
-            <div v-for="item in portfolioItems" class="portfolio__img" :key="item.path">
+            <div
+                v-for="item in portfolioItems"
+                class="portfolio__img"
+                data-cy="portfolio__img"
+                :key="item.path"
+            >
                 <router-link :to="{ path: `/portfolio/${item.path}`}">
                     <img :src="item.src" :alt="item.alt">
                 </router-link>

@@ -1,5 +1,5 @@
 <template>
-    <li :class="number + ' expcard'">
+    <li :class="number + ' expcard'" data-cy="expcard">
         <i class="ion-ios-circle-filled"/>
         <div class="expcard__title">
             <p>{{title}}</p>

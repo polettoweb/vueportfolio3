@@ -2,10 +2,10 @@
     <div v-if="brand !== null" class="portfolio-detail__content">
         <h1>{{brand.linkTitle}}</h1>
         <router-link to="/portfolio" class="button__back">Back</router-link>
-        <div class="portfolio-detail__image">
+        <div class="portfolio-detail__image" data-cy="portfolio-detail__image">
             <img :src="brand.srcDevices" :alt="brand.alt">
         </div>
-        <div class="portfolio-detail__description">
+        <div class="portfolio-detail__description" data-cy="portfolio-detail__description">
             <div class="portfolio-detail__websites">
                 <span>Websites</span>
                 <ul>

@@ -1,5 +1,5 @@
 <template>
-    <div :class="'skill ' + title">
+    <div :class="'skill ' + title" data-cy="skill">
         <h4>{{title}}</h4>
         <slot></slot>
     </div>

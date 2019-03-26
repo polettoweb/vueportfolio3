@@ -1,5 +1,5 @@
 <template>
-    <div class="socials__container">
+    <div class="socials__container" data-cy="socials__container">
         <a
             v-for="social in socials"
             :key="social.type"

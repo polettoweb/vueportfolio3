@@ -1,5 +1,5 @@
 <template>
-    <div class="keywords__container">
+    <div class="keywords__container" data-cy="keywords__container">
         <div class="keywords__wrapper">
             <sequential-entrance tag="div" entranceFromTop :delay="700">
                 <p

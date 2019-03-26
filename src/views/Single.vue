@@ -1,8 +1,8 @@
 <template>
-    <div class="blog__container">
-        <section>
+    <div class="blog__container" data-cy="blog__container">
+        <section v-if="article">
             <h1>{{article.title}}</h1>
-            <router-link to="/blog" class="button__back">Back</router-link>
+            <router-link to="/blog" class="button__back" data-cy="button__back">Back</router-link>
             <p>{{article.date}}</p>
             <div class="blog__image">
                 <img :src="article.featuredImage" alt>
@@ -30,15 +30,11 @@ export default {
     },
     metaInfo() {
         return {
-            title: `Marco Poletto Blog - ${
-                this.article.title
-            }- Frontend Web Developer | UI Engineer | Mentor`,
+            title: `Marco Poletto Blog - Frontend Web Developer | UI Engineer | Mentor`,
             meta: [
                 {
                     name: "description",
-                    content: `Marco Poletto Frontend Web Developer, Web Designer freelance, blog, ${
-                        this.article.title
-                    }`
+                    content: `Marco Poletto Frontend Web Developer, Web Designer freelance, blog`
                 }
             ]
         };

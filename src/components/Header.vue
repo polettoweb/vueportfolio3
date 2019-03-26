@@ -1,6 +1,6 @@
 <template>
     <div class="header__container">
-        <div class="logo">
+        <div class="logo" data-cy="logo">
             <router-link to="/" title="Back to the Homepage">
                 <img :src="logo" alt="logo">
             </router-link>

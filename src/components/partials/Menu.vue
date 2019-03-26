@@ -9,7 +9,12 @@
             >
                 <slot></slot>
 
-                <span class="bm-cross-button cross-style" @click="closeMenu" v-if="this.crossIcon">
+                <span
+                    class="bm-cross-button cross-style"
+                    data-cy="cross"
+                    @click="closeMenu"
+                    v-if="this.crossIcon"
+                >
                     <span class="bm-cross"></span>
                     <span class="bm-cross"></span>
                 </span>
@@ -18,6 +23,7 @@
 
         <div
             class="bm-burger-button"
+            data-cy="burger"
             :class="{ right: right }"
             @click="openMenu"
             v-if="this.burgerIcon"
@@ -31,7 +37,12 @@
         </div>
 
         <transition name="fade">
-            <div class="bm-overlay" @click="closeMenu" v-if="isSideBarOpen && !this.noOverlay"></div>
+            <div
+                class="bm-overlay"
+                data-cy="overlay"
+                @click="closeMenu"
+                v-if="isSideBarOpen && !this.noOverlay"
+            ></div>
         </transition>
     </div>
 </template>

@@ -2,7 +2,7 @@
     <section v-if="expDetails !== null" class="resume__container">
         <section class="experience__container">
             <h1>Experience</h1>
-            <p class="experience__intro">
+            <p class="experience__intro" data-cy="experience__intro">
                 Web development has been a passion of mine since
                 1997 that became my full-time job five years ago. I
                 really enjoy the challenge that the web brings to
@@ -29,7 +29,11 @@
             <h2>Skills</h2>
             <Skill v-for="topic in skillsTopics" :key="topic" :title="topic">
                 <div class="skill__title">
-                    <p v-for="item in skillsLines[topic]" :key="item.title">{{item.title}}</p>
+                    <p
+                        v-for="item in skillsLines[topic]"
+                        :key="item.title"
+                        data-cy="topic"
+                    >{{item.title}}</p>
                 </div>
             </Skill>
         </section>

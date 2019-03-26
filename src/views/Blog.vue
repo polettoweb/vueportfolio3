@@ -2,7 +2,12 @@
     <div class="blog-cat__home">
         <h1>Blog</h1>
         <div class="blog-cat__container">
-            <article v-for="(article, index) in articles" :key="index" class="blog-cat__post">
+            <article
+                v-for="(article, index) in articles"
+                :key="index"
+                class="blog-cat__post"
+                data-cy="blog-cat__post"
+            >
                 <router-link :to="`/blog/${article.slug}`">
                     <div class="blog-cat__image">
                         <img

@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <div class="footer__copy">
+        <div class="footer__copy" data-cy="footer__copy">
             <p>&copy; {{date}} Marco Poletto</p>
         </div>
         <Social :socials="socials"/>
