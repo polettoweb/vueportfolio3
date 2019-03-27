@@ -50,7 +50,7 @@
 <script>
 import { mapState, mapMutations } from "vuex";
 export default {
-    name: "menubar",
+    name: "Menu",
     computed: {
         ...mapState({
             isSideBarOpen: state => state.isSideBarOpen

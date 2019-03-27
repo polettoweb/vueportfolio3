@@ -14,6 +14,7 @@
 </template>
 <script>
 export default {
+    name: "Social",
     props: {
         socials: {
             type: Array,

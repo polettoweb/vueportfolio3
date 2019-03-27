@@ -17,6 +17,7 @@
 import { mapState, macActions, mapActions } from "vuex";
 import axios from "axios";
 export default {
+    name: "Single",
     computed: {
         ...mapState({
             article: state => state.single
@@ -26,7 +27,7 @@ export default {
         ...mapActions(["getSingle"])
     },
     created() {
-        this.article === null && this.getSingle(this.$route.params.slug);
+        this.getSingle(this.$route.params.slug);
     },
     metaInfo() {
         return {

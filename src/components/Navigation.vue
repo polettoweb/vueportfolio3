@@ -15,8 +15,9 @@
     </nav>
 </template>
 <script>
-import { mapMutations } from "vuex";
+import { mapState, mapMutations } from "vuex";
 export default {
+    name: "Navigation",
     data() {
         return {
             links: [
@@ -43,10 +44,15 @@ export default {
             ]
         };
     },
+    computed: {
+        ...mapState({
+            isSideBarOpen: state => state.isSideBarOpen
+        })
+    },
     methods: {
         ...mapMutations(["externalCloseMenu"]),
         closeMenu() {
-            this.externalCloseMenu();
+            this.isSideBarOpen === true && this.externalCloseMenu();
         }
     }
 };

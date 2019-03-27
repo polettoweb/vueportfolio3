@@ -15,6 +15,7 @@
 
 <script>
 export default {
+    name: "Keywords",
     props: {
         words: {
             type: Array,

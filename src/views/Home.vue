@@ -33,7 +33,7 @@
 import Keywords from "@/components/partials/Keywords";
 import marco from "@/assets/images/marco.png";
 export default {
-    name: "home",
+    name: "Home",
     data() {
         return {
             marco,

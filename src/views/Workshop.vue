@@ -22,6 +22,7 @@ import axios from "axios";
 import { mapState, mapActions } from "vuex";
 import WorkshopItem from "@/components/partials/WorkshopItem";
 export default {
+    name: "Workshop",
     computed: {
         ...mapState({
             items: state => state.workshopItems
@@ -31,7 +32,7 @@ export default {
         ...mapActions(["getWorkshop"])
     },
     created() {
-        this.workshopItems == null && this.getWorkshop();
+        this.items === null && this.getWorkshop();
     },
     components: {
         WorkshopItem

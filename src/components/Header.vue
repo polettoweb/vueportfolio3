@@ -17,6 +17,7 @@ import Menu from "@/components/partials/Menu.vue";
 import Navigation from "@/components/Navigation.vue";
 import logo from "@/assets/images/logo.svg";
 export default {
+    name: "Header",
     components: {
         Navigation,
         Menu

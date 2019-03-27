@@ -29,6 +29,7 @@
 import { mapState, mapActions } from "vuex";
 import axios from "axios";
 export default {
+    name: "Blog",
     computed: {
         ...mapState({
             articles: state => state.blog

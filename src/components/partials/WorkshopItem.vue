@@ -34,6 +34,7 @@
 <script>
 import defaultImage from "@/assets/images/logo.svg";
 export default {
+    name: "WorkshopItem",
     data() {
         return {
             defaultImage

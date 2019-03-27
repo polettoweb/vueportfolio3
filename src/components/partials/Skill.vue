@@ -7,6 +7,7 @@
 
 <script>
 export default {
+    name: "Skill",
     props: {
         title: {
             type: String,

@@ -20,6 +20,7 @@
 import { mapActions, mapState } from "vuex";
 import axios from "axios";
 export default {
+    name: "Portfolio",
     computed: {
         ...mapState({
             portfolioItems: state => state.portfolioItems

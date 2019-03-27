@@ -10,6 +10,7 @@
 <script>
 import Social from "@/components/partials/Social";
 export default {
+    name: "Footer",
     data() {
         return {
             date: new Date().getFullYear(),
