@@ -55,54 +55,7 @@
                     &:hover {
                         box-shadow: none;
                     }
-                }
 
-                &:nth-child(even) {
-                    float: right;
-                    box-shadow: $box-shadow;
-
-                    @media (max-width: $bp-md) {
-                        float: left;
-                        box-shadow: $box-shadow;
-                    }
-
-                    &:hover {
-                        box-shadow: none;
-                    }
-                }
-
-                &:not(:nth-child(1)) {
-                    margin-top: -60px;
-                }
-
-                &.even {
-                    &:before {
-                        position: absolute;
-                        content: '';
-                        width: 0;
-                        height: 0;
-                        border-top: 16px solid rgba(white, 0.5);
-                        border-left: 16px solid transparent;
-                        left: -16px;
-                        top: 0;
-                        @media (max-width: $bp-md) {
-                            left: auto;
-                            right: -16px;
-                            border-left: none;
-                            border-right: 16px solid transparent;
-                        }
-                    }
-
-                    .ion-ios-circle-filled {
-                        left: -41px;
-                        @media (max-width: $bp-md) {
-                            left: auto;
-                            right: -9.5vw;
-                        }
-                    }
-                }
-
-                &.odd {
                     &:before {
                         position: absolute;
                         content: '';
@@ -120,6 +73,49 @@
                             right: -9.5vw;
                         }
                     }
+                }
+
+                &:nth-child(even) {
+                    float: right;
+                    box-shadow: $box-shadow;
+
+                    @media (max-width: $bp-md) {
+                        float: left;
+                        box-shadow: $box-shadow;
+                    }
+
+                    &:before {
+                        position: absolute;
+                        content: '';
+                        width: 0;
+                        height: 0;
+                        border-top: 16px solid rgba(white, 0.5);
+                        border-left: 16px solid transparent;
+                        left: -16px;
+                        top: 0;
+                        @media (max-width: $bp-md) {
+                            left: auto;
+                            right: -16px;
+                            border-left: none;
+                            border-right: 16px solid transparent;
+                        }
+                    }
+
+                    &:hover {
+                        box-shadow: none;
+                    }
+
+                    .ion-ios-circle-filled {
+                        left: -41px;
+                        @media (max-width: $bp-md) {
+                            left: auto;
+                            right: -9.5vw;
+                        }
+                    }
+                }
+
+                &:not(:nth-child(1)) {
+                    margin-top: -60px;
                 }
 
                 &__title {

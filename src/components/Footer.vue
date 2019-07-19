@@ -21,6 +21,11 @@ export default {
                     title: "GitHub Page"
                 },
                 {
+                    type: "ion-social-codepen",
+                    link: "https://codepen.io/polettoweb/",
+                    title: "Codepen Page"
+                },
+                {
                     type: "ion-social-twitter",
                     link: "https://twitter.com/polettoweb",
                     title: "Twitter Page"
@@ -29,6 +34,11 @@ export default {
                     type: "ion-social-linkedin",
                     link: "https://www.linkedin.com/in/marco-poletto-96853774/",
                     title: "Linkedin Page"
+                },
+                {
+                    type: "ion-social-youtube",
+                    link: "https://www.youtube.com/channel/UC_ap7AXgonikRgAYqRhbibg",
+                    title: "YouTube channel"
                 },
                 {
                     type: "ion-email",

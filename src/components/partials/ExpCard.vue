@@ -1,5 +1,5 @@
 <template>
-    <li :class="number + ' expcard'" data-cy="expcard">
+    <li class="expcard" data-cy="expcard">
         <i class="ion-ios-circle-filled"/>
         <div class="expcard__title">
             <p>{{title}}</p>
@@ -16,11 +16,6 @@
 export default {
     name: "ExpCard",
     props: {
-        number: {
-            type: String,
-            required: true,
-            validator: prop => ["odd", "even"].indexOf(prop) !== -1
-        },
         title: {
             type: String,
             required: true

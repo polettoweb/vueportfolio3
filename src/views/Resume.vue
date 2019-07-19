@@ -17,7 +17,6 @@
                 <ExpCard
                     v-for="item in expDetails"
                     :key="item.title"
-                    :number="item.number"
                     :location="item.location"
                     :title="item.title"
                     :date="item.date"
